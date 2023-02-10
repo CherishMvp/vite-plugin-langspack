@@ -1,6 +1,10 @@
 {
-  "name": "@cherish/vite-plugin-langspack",
-  "version": "0.1.2",
+  "name": "zwt-langspack",
+  "version": "0.1.5",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "vue3",
     "vite",
@@ -8,7 +12,7 @@
     "i18n",
     "locales"
   ],
-  "author": "cherish",
+  "author": "cherishtao",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CherishMvp/vite-plugin-langspack/issues"

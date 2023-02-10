@@ -62,13 +62,17 @@ export default function langspack(opt: LangspackOpt): Plugin {
       localData = collectData(pluginOpt.lang, pluginOpt.mode ?? '');
     },
     closeBundle() {
+      const fileNames: string[] = ['zh_CN.json', 'en_US.json'];
       if (pluginOpt.mode !== 'development') {
+        for (const name of fileNames) {
+          for (const f of outputFiles) {
+            copy(f, `${pluginOpt.lang.movePath}/${name}`);
+          }
+        }
         for (const f of outputFiles) {
-          copy(f, `${pluginOpt.lang.movePath}/${f}`);
           unlink(f);
         }
       }
-
       Log.debug('vite-plugin-langspack end');
     },
     resolveId(source, importer) {
